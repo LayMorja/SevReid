@@ -1,0 +1,113 @@
+//====================================================================================================
+//Верхняя представительная секция ================================================================================================================================================================================================================================================
+.history-about {
+   background: #2d7e97;
+   &__img {
+      width: 100%;
+      object-fit: cover;
+   }
+
+   &__name {
+      text-align: center;
+      color: #ffffff;
+      @include adaptiveValue('font-size', 72, 30);
+      text-shadow: 2px 2px 5px #00000067;
+      padding: 15px 10px;
+   }
+
+   &__text {
+      color: #fff;
+      @include adaptiveValue('font-size', 20, 16);
+      font-weight: medium;
+      text-align: justify;
+      text-transform: uppercase;
+      line-height: 124.4%;
+      padding: 0 0 40px 0;
+      position: relative;
+      @media screen and (max-width: 550px) {
+         text-transform: none;
+         line-height: 110%;
+      }
+   }
+}
+
+//Основной блок с историей ================================================================================================================================================================================================================================================
+.history {
+   .title {
+      text-align: center;
+      padding: 40px 0 20px 0;
+   }
+
+   &__title.title {
+      padding: 10px 0;
+      border-top: 20px solid #d9f2ff;
+      border-bottom: 20px solid #d9f2ff;
+      margin-bottom: 20px;
+      color: $mainDarkColor;
+   }
+
+   &__body {
+      display: flex;
+      justify-content: space-between;
+      &:last-child {
+         margin-bottom: 60px;
+      }
+   }
+
+   &__chronology {
+      img {
+         height: 100%;
+      }
+   }
+
+   &__content {
+      margin-left: 30px;
+      padding-top: 6px;
+      flex: 0 1 1400px;
+      font-weight: 500;
+      @include adaptiveValue('font-size', 20, 16);
+      line-height: 124.4%;
+      text-align: justify;
+      text-transform: uppercase;
+      color: #285064;
+      p {
+         margin-bottom: 34px;
+      }
+      p.bigMrg {
+         margin-bottom: 36px;
+      }
+   }
+
+   &__full {
+      padding-bottom: 40px;
+      img {
+         width: 100%;
+         object-fit: cover;
+      }
+   }
+   @media (max-width: 1200px) {
+      &__content {
+         margin-left: 0;
+      }
+      &__chronology {
+         display: none;
+      }
+   }
+}
+.content {
+   &__img {
+      border-radius: 50%;
+      overflow: hidden;
+      &_r {
+         float: right;
+         margin: 10px 0 10px 55px;
+      }
+      &_l {
+         float: left;
+         margin: 10px 55px 10px 0;
+      }
+      @media (max-width: 900px) {
+         width: 40vh;
+      }
+   }
+}

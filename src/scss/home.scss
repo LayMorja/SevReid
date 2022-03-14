@@ -1,0 +1,337 @@
+// Слайдер главной страницы ====================================================================================================
+.slider-types {
+   position: relative;
+   &::after {
+      content: '';
+      @include adaptiveValue('height', 60, 20);
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      z-index: 2;
+      background: linear-gradient(0deg, #ffffff 0%, #ffffffd5 61.19%, rgba(255, 255, 255, 0) 166.4%);
+   }
+   &__slider {
+      @include adaptiveValue('max-height', 535, 350);
+   }
+
+   &__slide {
+      @include adaptiveValue('min-height', 535, 350);
+      width: 100%;
+      position: relative;
+      &_1 {
+         background: url(@img/home/slider/01.webp) center / cover no-repeat;
+      }
+      &_2 {
+         background: url(@img/home/slider/02.webp) center / cover no-repeat;
+      }
+      &_3 {
+         background: url(@img/home/slider/04.webp) center / cover no-repeat;
+      }
+      &_4 {
+         background: url(@img/home/slider/05.webp) center / cover no-repeat;
+      }
+      &_5 {
+         background: url(@img/home/slider/06.webp) center / cover no-repeat;
+      }
+   }
+
+   &__text {
+      font-family: Oswald;
+      font-weight: 200;
+      @include adaptiveValue('font-size', 38, 28);
+      line-height: math.div(20, 18);
+      text-align: center;
+      letter-spacing: -0.02em;
+      color: #ffffff;
+      position: absolute;
+      bottom: calc(rem(63) + 10%);
+      left: 50%;
+      transform: translate(-50%, 0);
+      text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.6);
+      white-space: nowrap;
+   }
+   .swiper-pagination {
+      @include adaptiveValue('bottom', 78, 48);
+   }
+   .swiper-pagination-bullet {
+      width: rem(16);
+      height: rem(16);
+      line-height: math.div(20, 18);
+      font-size: rem(16);
+      background-color: #444444;
+   }
+}
+
+// Секция "О предприятии" ====================================================================================================
+.about {
+   &__container {
+      background-color: $mainDarkColor;
+      @include adaptiveValue('padding-top', 60, 30);
+      @include adaptiveValue('padding-bottom', 60, 30);
+   }
+
+   &__body {
+      display: grid;
+      @include adaptiveValue('column-gap', 50, 20, 1920, 1200, 1);
+      row-gap: rem(30);
+      justify-items: center;
+      align-items: center;
+      @media (min-width: $tablet) {
+         grid-template-columns: percent(560, $maxWidthContainer) 1fr;
+         @include adaptiveValue('padding-right', 120, 20, 1920, 992, 1);
+      }
+   }
+
+   &__image-ibg {
+      align-self: center;
+      border-radius: 50%;
+      overflow: hidden;
+      margin-bottom: em(15);
+      padding-bottom: percent(283, 284);
+   }
+
+   &__description {
+      font-size: rem(10);
+      line-height: math.div(15, 10);
+      text-align: center;
+      text-transform: uppercase;
+      color: #d9f2ff;
+      background-color: #164352;
+      border-radius: rem(20);
+      padding: rem(7) rem(25);
+   }
+
+   &__title {
+      margin-bottom: em(50, 48);
+      @media (min-width: $tablet) {
+         padding-left: em(10, 48);
+      }
+   }
+
+   &__text {
+      line-height: math.div(23, 18);
+      text-align: justify;
+      color: #ffffff;
+      p {
+         &:not(:last-child) {
+            margin-bottom: em(35, 18);
+         }
+      }
+      @media (min-width: $tablet) {
+         text-transform: uppercase;
+      }
+   }
+   @media (max-width: $tablet) {
+      &__title {
+         text-align: center;
+         margin-bottom: em(10, 36);
+      }
+   }
+}
+
+// Секция "Новости" ====================================================================================================
+.news {
+   @include adaptiveValue('padding-top', 60, 30);
+   @include adaptiveValue('padding-bottom', 90, 40);
+   &__container {
+   }
+
+   &__title {
+      color: $mainDarkColor;
+      text-align: center;
+      margin-bottom: em(50, 48);
+   }
+
+   &__body {
+      display: flex;
+      flex-direction: column;
+      row-gap: rem(25);
+   }
+
+   &__block {
+   }
+}
+.block-news {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   padding: rem(16) 0;
+   column-gap: rem(40);
+   @include adaptiveValue('padding-left', 40, 15);
+   @include adaptiveValue('padding-right', 40, 15);
+   background: linear-gradient(0deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2));
+   box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.15);
+   transition: all 0.6s ease;
+   &:hover {
+      box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.25);
+   }
+
+   &__link {
+      color: $mainDarkColor;
+      padding: rem(12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: #edfbff;
+      transition: all 0.3s ease;
+      &:hover {
+         box-shadow: 0px 0px 10px 2px rgba($mainColor, 0.3);
+      }
+   }
+
+   &__body {
+      padding-top: rem(3);
+   }
+
+   &__title {
+   }
+
+   &__link-title {
+      display: inline-block;
+      color: $mainDarkColor;
+      font-weight: normal;
+      font-size: rem(24);
+      line-height: math.div(26, 24);
+      @include adaptiveValue('margin-bottom', 35, 20);
+      position: relative;
+      @media (min-width: $tablet) {
+         &::after {
+            content: '';
+            display: block;
+            height: rem(2);
+            width: 0;
+            background-color: $mainDarkColor;
+            transition: all 0.6s ease;
+            transform: translate(-50%, 0);
+            position: absolute;
+            left: 50%;
+            bottom: rem(-10);
+         }
+         &:hover {
+            &::after {
+               width: 100%;
+            }
+         }
+      }
+   }
+
+   &__text {
+      font-weight: 400;
+      line-height: math.div(22, 18);
+      @media (min-width: $tablet) {
+         text-transform: uppercase;
+      }
+   }
+   @media (max-width: $mobile) {
+      row-gap: rem(12);
+      flex-direction: column;
+      align-items: center;
+      &__title {
+         text-align: center;
+      }
+   }
+}
+
+// Секция "Есть идея?" ====================================================================================================
+.idea {
+   background: url(@img/home/idea/background_1.jpg) center / cover no-repeat;
+   @include adaptiveValue('padding-top', 70, 30);
+   @include adaptiveValue('padding-bottom', 50, 20);
+
+   &__container {
+      display: flex;
+      justify-content: flex-end;
+      @media (max-width: $tablet) {
+         justify-content: center;
+      }
+   }
+
+   &__form {
+   }
+}
+.form {
+   @media (min-width: $tablet) {
+      min-width: rem(850);
+      margin: 0 0 0 auto;
+      @include adaptiveValue('font-size', 16, 12);
+   }
+
+   &__body {
+   }
+
+   &__title {
+   }
+
+   &__label {
+      font-size: rem(26);
+      line-height: math.div(39, 26);
+      color: rgba(255, 255, 255, 0.87);
+      &:not(:last-child) {
+         margin-bottom: em(32, 26);
+      }
+   }
+
+   &__item {
+      margin-bottom: em(13);
+      &:nth-of-type(2) {
+         margin-bottom: em(20);
+      }
+   }
+
+   &__input {
+      padding: rem(7) rem(15);
+      outline: none;
+      background: rgba(255, 255, 255, 0.7);
+      border-radius: 40px;
+      width: rem(440);
+      transition: all 0.3s ease;
+      &_textarea {
+         padding: rem(20);
+         width: 100%;
+         height: rem(255);
+         resize: vertical;
+      }
+      &::placeholder {
+         color: #727272;
+      }
+      &:focus {
+         background: rgba(255, 255, 255, 0.8);
+         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      }
+      @media (max-width: $mobile) {
+         width: 85vw;
+      }
+   }
+
+   &__button {
+      font-family: Oswald;
+      line-height: math.div(24, 16);
+      color: $mainDarkColor;
+      padding: rem(6) rem(20);
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: rem(23);
+      position: relative;
+      display: flex;
+      align-items: center;
+      transition: all 0.3s ease;
+      &::before {
+         position: absolute;
+         right: rem(-34);
+         font-size: rem(20);
+         color: rgba(255, 255, 255, 0.9);
+      }
+      &:hover {
+         background-color: $mainDarkColor;
+         color: #fff;
+         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      }
+      &:active {
+         background: $mainColor;
+         &::before {
+            color: $mainColor;
+         }
+      }
+   }
+}

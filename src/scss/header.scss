@@ -1,0 +1,272 @@
+// Блок "шапки" ====================================================================================================
+.header {
+   color: #fff;
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   z-index: 10;
+
+   &_home {
+      background: linear-gradient(180deg, #ffffff 0%, #ffffff 61.19%, rgba(255, 255, 255, 0) 166.4%);
+   }
+
+   &_inner {
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+   }
+
+   &__container {
+      position: relative;
+   }
+
+   &__logo {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: rem(12) rem(30) rem(25);
+      img {
+         width: 100%;
+         object-fit: cover;
+         position: relative;
+         z-index: 10;
+      }
+      @media (max-width: $tablet) {
+         & {
+            justify-content: center;
+            padding: 0;
+            :not(:first-child) {
+               display: none;
+            }
+         }
+      }
+   }
+
+   &__menu {
+   }
+}
+// Верхнее меню сайта ====================================================================================================
+.menu {
+   @media (min-width: $tablet) {
+      font-weight: 400;
+      background: linear-gradient(to bottom, $mainDarkColor 95%, #346580 95%);
+      position: relative;
+      top: rem(11);
+   }
+
+   &__body {
+      @media (max-width: $tablet) {
+         position: fixed;
+         width: 100%;
+         height: 100%;
+         top: 0;
+         right: -100%;
+         visibility: hidden;
+         opacity: 0;
+         overflow-y: auto;
+         transition: all 0.45s ease;
+         padding: rem(110) rem(20) rem(30);
+         .menu-open & {
+            background-color: #3c7696;
+            right: 0;
+            visibility: visible;
+            opacity: 1;
+         }
+      }
+   }
+
+   &__sub-menu {
+   }
+
+   &__list {
+      @media (min-width: $tablet) {
+         border: 1px solid white;
+         display: flex;
+         flex-wrap: wrap;
+         align-items: center;
+         justify-content: space-evenly;
+      }
+   }
+
+   &__item {
+      padding: rem(4) 0;
+      @include adaptiveValue('padding-right', 40, 5, 1920, 1070, 1);
+      @include adaptiveValue('padding-left', 40, 5, 1920, 1070, 1);
+      position: relative;
+      @media (min-width: em(1200)) {
+         &:not(:last-child) {
+            &::after {
+               content: '';
+               position: absolute;
+               top: 0;
+               background-color: #fff;
+               transform: skew(-20deg);
+               width: 2px;
+               height: 100%;
+               @include adaptiveValue('right', -36, -8, 1920, 880, 1);
+            }
+         }
+      }
+      @media (any-hover: hover) {
+         &:hover {
+            .menu__sub-menu {
+               visibility: visible;
+               opacity: 1;
+               transform: translateY(0);
+               pointer-events: auto;
+            }
+            .menu__arrow {
+               transform: rotate(-180deg);
+            }
+         }
+      }
+      @media (min-width: $tablet) {
+         &._hover {
+            .menu__sub-menu {
+               visibility: visible;
+               opacity: 1;
+               transform: translateY(0);
+               pointer-events: auto;
+            }
+            .menu__arrow {
+               transform: rotate(-180deg);
+            }
+         }
+      }
+   }
+
+   &__link {
+      line-height: math.div(22, 18);
+      text-transform: uppercase;
+      position: relative;
+      @media (min-width: $tablet) {
+         &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translate(-50%, 0);
+            background-color: #fff;
+            width: 0;
+            opacity: 0;
+            height: rem(1);
+            transition: all 0.3s ease;
+         }
+         &:hover {
+            &::after {
+               width: 100%;
+               opacity: 1;
+            }
+         }
+      }
+   }
+
+   &__arrow {
+      @media (any-hover: hover) {
+         display: none;
+      }
+      margin: 0px 0px 0px rem(8);
+      font-size: rem(8);
+      transition: all 0.45s ease;
+      @media (max-width: $tablet) {
+         font-size: rem(14);
+      }
+      &._spoller-active {
+         transform: rotate(-180deg);
+      }
+   }
+
+   @media (max-width: $tablet) {
+      &__item {
+         padding: 0;
+         &:not(:last-child) {
+            margin-bottom: em(30, 20);
+         }
+      }
+      &__link {
+         font-size: rem(20);
+      }
+   }
+}
+.sub-menu {
+   position: relative;
+   flex: 1 1 100%;
+   color: #fff;
+   @media (min-width: $tablet) {
+      min-width: rem(340);
+      position: absolute;
+      @include adaptiveValue('left', -52, -14, 1920, 880, 1);
+      top: calc(100% + rem(1));
+      visibility: hidden;
+      opacity: 0;
+      transition: all 0.3s ease;
+      transform: translate(0, 20%);
+      pointer-events: none;
+      z-index: 5;
+      background-color: #346580;
+   }
+
+   &__item {
+   }
+
+   &__link {
+      display: block;
+      padding: rem(10) rem(15);
+      transition: background-color 0.2s ease;
+      &:hover {
+         background-color: $mainDarkColor;
+      }
+   }
+}
+
+// Иконка для меню-бургер ====================================================================================================
+.icon-menu {
+   display: none;
+   @media (max-width: $tablet) {
+      display: block;
+      position: relative;
+      top: rem(20);
+      left: 90%;
+      width: rem(30);
+      height: rem(18);
+      cursor: pointer;
+      z-index: 5;
+      span,
+      &::before,
+      &::after {
+         content: '';
+         transition: all 0.3s ease 0s;
+         right: 0;
+         position: absolute;
+         width: 100%;
+         height: rem(2);
+         background-color: #000;
+      }
+      &::before {
+         top: 0;
+      }
+      &::after {
+         bottom: 0;
+      }
+      span {
+         top: calc(50% - rem(1));
+      }
+      .menu-open & {
+         span {
+            width: 0;
+            background-color: #fff;
+         }
+         &::before,
+         &::after {
+            background-color: #fff;
+         }
+         &::before {
+            top: calc(50% - rem(1));
+            transform: rotate(-45deg);
+         }
+         &::after {
+            bottom: calc(50% - rem(1));
+            transform: rotate(45deg);
+         }
+      }
+   }
+}

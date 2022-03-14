@@ -1,0 +1,198 @@
+.social {
+   &__container {
+   }
+
+   &__title {
+      &:not(:last-child) {
+         margin-bottom: em(30, 48);
+      }
+   }
+
+   &__label {
+   }
+
+   &__text {
+      @include adaptiveValue('font-size', 18, 16);
+      line-height: 125.4%;
+      color: #2d7e97;
+      @media (min-width: $mobile) {
+         text-transform: uppercase;
+      }
+   }
+
+   &__plates {
+   }
+
+   &__gull {
+   }
+
+   &__column {
+      @include adaptiveValue('padding-top', 60, 30);
+      @include adaptiveValue('padding-bottom', 60, 30);
+      gap: rem(40);
+   }
+
+   &__item {
+   }
+}
+.plates-social {
+   @include adaptiveValue('padding-top', 25, 15);
+   @include adaptiveValue('padding-bottom', 60, 30);
+   display: grid;
+   align-items: center;
+   @media (min-width: $pc) {
+      grid-template-columns: repeat(auto-fit, minmax(rem(472), auto));
+      gap: rem(40);
+   }
+   &__image-ibg {
+      padding-bottom: percent(268, 472);
+      @media (max-width: $pc) {
+         display: none;
+      }
+   }
+
+   &__text {
+      @include adaptiveValue('font-size', 18, 16);
+      line-height: 125.4%;
+      text-align: justify;
+      @media (min-width: $mobile) {
+         text-transform: uppercase;
+      }
+      p {
+         &:not(:last-child) {
+            @include adaptiveValue('margin-bottom', 40, 20);
+         }
+      }
+   }
+}
+.gull-social {
+   position: relative;
+   overflow: hidden;
+   @media (min-width: $pc) {
+      background: url(@img/social/gull/image.jpg) center right / contain no-repeat;
+   }
+   &::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background-color: $mainDarkColor;
+      @media (min-width: $pc) {
+         background: linear-gradient(89.63deg, #295065 40.63%, rgba(255, 255, 255, 0) 59.23%);
+      }
+   }
+
+   &__container {
+      @media (min-width: $pc) {
+         display: grid;
+         grid-template-columns: percent(807, 1700) auto;
+      }
+   }
+
+   &__content {
+      position: relative;
+      padding: rem(30) 0;
+      z-index: 2;
+   }
+
+   &__title {
+      @include adaptiveValue('font-size', 36, 24);
+      line-height: math.div(53, 36);
+      position: relative;
+      z-index: 2;
+      &:not(:last-child) {
+         margin-bottom: em(25, 36);
+      }
+   }
+
+   &__text {
+      position: relative;
+      z-index: 2;
+      font-weight: 400;
+      font-size: rem(16);
+      line-height: math.div(17, 14);
+      text-align: justify;
+      color: #ffffff;
+      @media (min-width: $mobile) {
+         text-transform: uppercase;
+      }
+      p {
+         &:not(:last-child) {
+            margin-bottom: em(15, 16);
+         }
+      }
+   }
+
+   &__image-ibg {
+      display: block;
+      overflow: hidden;
+      padding-bottom: 45%;
+      margin-bottom: rem(15);
+      border-radius: rem(8);
+      @media (min-width: $pc) {
+         display: none;
+      }
+   }
+}
+.item-social {
+   box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.15);
+   transition: all 0.6s ease;
+   padding: rem(27) 0;
+   @include adaptiveValue('padding-left', 40, 15);
+   @include adaptiveValue('padding-right', 40, 15);
+   display: grid;
+   gap: rem(15);
+   @media (min-width: $pc) {
+      grid-template: auto / auto rem(500);
+   }
+   &:hover {
+      box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.3);
+   }
+   &__content {
+      @media (min-width: $pc) {
+         padding-right: rem(15);
+      }
+   }
+
+   &__title {
+      font-family: 'Oswald';
+      font-weight: 400;
+      @include adaptiveValue('font-size', 36, 24);
+      line-height: math.div(52, 36);
+      text-transform: uppercase;
+      color: #ffffff;
+      background-color: $mainColor;
+      display: inline-block;
+      padding: rem(4) rem(10);
+      @media (min-width: $pc) {
+         padding: rem(4) rem(40);
+      }
+      &:not(:last-child) {
+         @include adaptiveValue('margin-bottom', 25, 10);
+      }
+   }
+
+   &__text {
+      font-weight: 400;
+      font-size: rem(16);
+      line-height: math.div(17, 14);
+      text-align: justify;
+      @media (min-width: $mobile) {
+         text-transform: uppercase;
+      }
+      p {
+         &:not(:last-child) {
+            margin-bottom: em(15, 14);
+         }
+      }
+   }
+
+   &__image {
+   }
+
+   &__image-ibg {
+      padding-bottom: percent(290, 500);
+   }
+}

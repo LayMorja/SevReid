@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+	@@include('html/_head.htm',{
+	"title":"Документы | Северный Рейд"
+	})
+	<body>
+		<div class="wrapper">
+			@@include('html/_header.htm',{
+            "mod":"inner"
+         })
+			<main class="page page_inner">
+            <section class="page__documents documents">
+               <div class="documents__container">
+                  <h1 class="documents__title title">Документы</h1>
+                  <form action="#" class="documents__form form-documents">
+                     <div class="form-documents__item">
+                        <label class="form-documents__label" for="i_1">Название документа</label>
+                        <input id="i_1" autocomplete="off" type="text" name="form[]" data-error="Ошибка" placeholder="" class="form-documents__input">
+                     </div>
+                     <div class="form-documents__items">
+                        <div class="form-documents__item">
+                           <label class="form-documents__label" for="i_2">Раздел</label>
+                           <select id="i_2" name="form[]" class="form-documents">
+                              <option value="1" selected>Пункт №1</option>
+                              <option value="2">Пункт №2</option>
+                              <option value="3">Пункт №3</option>
+                              <option value="4">Пункт №4</option>
+                           </select>
+                        </div>
+                        <div class="form-documents__item">
+                           <label class="form-documents__label" for="i_3">Год публикации</label>
+                           <select id="i_3" name="form[]" class="form-documents">
+                              <option value="1" selected>Пункт №1</option>
+                              <option value="2">Пункт №2</option>
+                              <option value="3">Пункт №3</option>
+                              <option value="4">Пункт №4</option>
+                           </select>
+                        </div>
+                        <div class="form-documents__item">
+                           <label class="form-documents__label" for="i_4">Период/дата</label>
+                           <select id="i_4" name="form[]" class="form-documents">
+                              <option value="1" selected>Пункт №1</option>
+                              <option value="2">Пункт №2</option>
+                              <option value="3">Пункт №3</option>
+                              <option value="4">Пункт №4</option>
+                           </select>
+                        </div>
+                     </div>
+                     <button type="submit" class="form-documents__button"><span class="_icon-loop">Поиск</span></button>
+                  </form>
+                  <div class="documents__column _column">
+                     <div class="documents__block block-documents">
+                        <div class="block-documents__text">
+                           Нефинансовый отчет об устойчивости развития АО «Северный Рейд» за 2015 год 
+                        </div>
+                        <div class="block-documents__icon _icon-document"></div>
+                     </div>
+                     <div class="documents__block block-documents">
+                        <div class="block-documents__text">
+                           Нефинансовый отчет об устойчивости развития АО «Северный Рейд» за 2015 год 
+                        </div>
+                        <div class="block-documents__icon _icon-document"></div>
+                     </div>
+                  </div>
+               </div>
+            </section>
+			</main>
+			@@include('html/_footer.htm',{})
+		</div>
+		@@include('html/_popup.htm',{})
+		@@include('html/_js.htm',{})
+	</body>
+</html>
