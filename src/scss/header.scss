@@ -64,7 +64,7 @@
          opacity: 0;
          overflow-y: auto;
          transition: all 0.45s ease;
-         padding: rem(110) rem(20) rem(30);
+         padding: rem(110) rem(40) rem(30);
          .menu-open & {
             background-color: #3c7696;
             right: 0;
@@ -88,6 +88,10 @@
    }
 
    &__item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
       padding: rem(4) 0;
       @include adaptiveValue('padding-right', 40, 5, 1920, 1070, 1);
       @include adaptiveValue('padding-left', 40, 5, 1920, 1070, 1);
@@ -179,7 +183,7 @@
       &__item {
          padding: 0;
          &:not(:last-child) {
-            margin-bottom: em(30, 20);
+            margin-bottom: em(25, 20);
          }
       }
       &__link {
@@ -191,6 +195,7 @@
    position: relative;
    flex: 1 1 100%;
    color: #fff;
+   background-color: #346580;
    @media (min-width: $tablet) {
       min-width: rem(340);
       position: absolute;
@@ -202,7 +207,9 @@
       transform: translate(0, 20%);
       pointer-events: none;
       z-index: 5;
-      background-color: #346580;
+   }
+   @media (max-width: $tablet) {
+      margin: rem(20) rem(-40) 0;
    }
 
    &__item {
