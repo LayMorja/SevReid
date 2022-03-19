@@ -142,6 +142,7 @@ body {
 @import 'contucts';
 @import 'social';
 @import 'management';
+@import 'products';
 
 .page {
    &_home {
@@ -185,5 +186,8 @@ body {
    }
 
    &__management {
+   }
+
+   &__products {
    }
 }

@@ -10,7 +10,7 @@
    &__name {
       text-align: center;
       color: #ffffff;
-      @include adaptiveValue('font-size', 72, 30);
+      @include adaptiveValue('font-size', 72, 32);
       text-shadow: 2px 2px 5px #00000067;
       padding: 15px 10px;
    }

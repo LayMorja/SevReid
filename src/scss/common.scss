@@ -14,6 +14,8 @@
    display: flex;
    flex-direction: column;
    row-gap: rem(20);
+   @include adaptiveValue('padding-top', 60, 30);
+   @include adaptiveValue('padding-bottom', 60, 30);
 }
 
 ._label {

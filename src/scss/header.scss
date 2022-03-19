@@ -70,6 +70,17 @@
             right: 0;
             visibility: visible;
             opacity: 1;
+            &::before {
+               display: block;
+               content: '';
+               width: 100%;
+               height: rem(90);
+               position: fixed;
+               top: 0;
+               left: 0;
+               background-color: #3c7696;
+               z-index: 23;
+            }
          }
       }
    }
@@ -113,9 +124,10 @@
       @media (any-hover: hover) {
          &:hover {
             .menu__sub-menu {
+               border-top: 1px solid #fff;
                visibility: visible;
                opacity: 1;
-               transform: translateY(0);
+               transform: translateY(rem(-1));
                pointer-events: auto;
             }
             .menu__arrow {
