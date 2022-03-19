@@ -902,14 +902,14 @@ textarea.input {
     padding-top: calc(1.875rem + 1.875 * (100vw - 20rem) / 88.125);
   }
 }
-@supports (padding-bottom: clamp( 2.5rem , 1.7907801418rem  +  3.5460992908vw , 5.625rem )) {
+@supports (padding-bottom: clamp( 0.625rem , 0.3413120567rem  +  1.4184397163vw , 1.875rem )) {
   .news {
-    padding-bottom: clamp( 2.5rem , 1.7907801418rem  +  3.5460992908vw , 5.625rem );
+    padding-bottom: clamp( 0.625rem , 0.3413120567rem  +  1.4184397163vw , 1.875rem );
   }
 }
-@supports not (padding-bottom: clamp( 2.5rem , 1.7907801418rem  +  3.5460992908vw , 5.625rem )) {
+@supports not (padding-bottom: clamp( 0.625rem , 0.3413120567rem  +  1.4184397163vw , 1.875rem )) {
   .news {
-    padding-bottom: calc(2.5rem + 3.125 * (100vw - 20rem) / 88.125);
+    padding-bottom: calc(0.625rem + 1.25 * (100vw - 20rem) / 88.125);
   }
 }
 .news__title {
@@ -1047,6 +1047,26 @@ textarea.input {
 @supports not (padding-bottom: clamp( 1.25rem , 0.8244680851rem  +  2.1276595745vw , 3.125rem )) {
   .idea {
     padding-bottom: calc(1.25rem + 1.875 * (100vw - 20rem) / 88.125);
+  }
+}
+@supports (margin-top: clamp( 1.875rem , 1.4494680851rem  +  2.1276595745vw , 3.75rem )) {
+  .idea {
+    margin-top: clamp( 1.875rem , 1.4494680851rem  +  2.1276595745vw , 3.75rem );
+  }
+}
+@supports not (margin-top: clamp( 1.875rem , 1.4494680851rem  +  2.1276595745vw , 3.75rem )) {
+  .idea {
+    margin-top: calc(1.875rem + 1.875 * (100vw - 20rem) / 88.125);
+  }
+}
+@supports (margin-bottom: clamp( 1.875rem , 1.4494680851rem  +  2.1276595745vw , 3.75rem )) {
+  .idea {
+    margin-bottom: clamp( 1.875rem , 1.4494680851rem  +  2.1276595745vw , 3.75rem );
+  }
+}
+@supports not (margin-bottom: clamp( 1.875rem , 1.4494680851rem  +  2.1276595745vw , 3.75rem )) {
+  .idea {
+    margin-bottom: calc(1.875rem + 1.875 * (100vw - 20rem) / 88.125);
   }
 }
 .idea__container {
@@ -2166,7 +2186,10 @@ textarea.input {
   text-align: center;
 }
 .item-product:hover .item-product__image-ibg {
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 0px 8px 3px #29506571;
+}
+.item-product:hover .item-product__name {
+  box-shadow: 0px 0px 8px 3px #29506571;
 }
 .item-product:hover .item-product__name::after, .item-product:hover .item-product__name::before {
   width: 100%;
@@ -2175,13 +2198,13 @@ textarea.input {
 .item-product__image-ibg {
   align-self: center;
   padding-bottom: 66.0869565217%;
-  border: 2px solid rgba(0, 0, 0, 0.25);
   border-bottom: none;
   max-width: 95%;
   margin: 0 auto;
   transition: all 0.3s ease;
 }
 .item-product__name {
+  transition: all 0.3s ease;
   font-family: "Oswald";
   line-height: 1.5;
   text-transform: uppercase;

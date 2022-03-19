@@ -133,7 +133,7 @@
 // Секция "Новости" ====================================================================================================
 .news {
    @include adaptiveValue('padding-top', 60, 30);
-   @include adaptiveValue('padding-bottom', 90, 40);
+   @include adaptiveValue('padding-bottom', 30, 10);
    &__container {
    }
 
@@ -239,6 +239,8 @@
    background: url(@img/home/idea/background_1.jpg) center / cover no-repeat;
    @include adaptiveValue('padding-top', 70, 30);
    @include adaptiveValue('padding-bottom', 50, 20);
+   @include adaptiveValue('margin-top', 60, 30);
+   @include adaptiveValue('margin-bottom', 60, 30);
 
    &__container {
       display: flex;
