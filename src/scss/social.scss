@@ -1,38 +1,10 @@
 .social {
-   &__container {
-   }
-
-   &__title {
-      &:not(:last-child) {
-         margin-bottom: em(30, 48);
-      }
-   }
-
-   &__label {
-   }
-
-   &__text {
-      @include adaptiveValue('font-size', 18, 16);
-      line-height: 125.4%;
-      color: #2d7e97;
-      @media (min-width: $mobile) {
-         text-transform: uppercase;
-      }
-   }
-
-   &__plates {
-   }
-
-   &__gull {
-   }
-
    &__column {
       gap: rem(40);
    }
-
-   &__item {
-   }
 }
+
+//====================================================================================================
 .plates-social {
    @include adaptiveValue('padding-top', 25, 15);
    @include adaptiveValue('padding-bottom', 60, 30);
@@ -50,12 +22,7 @@
    }
 
    &__text {
-      @include adaptiveValue('font-size', 18, 16);
-      line-height: 125.4%;
       text-align: justify;
-      @media (min-width: $mobile) {
-         text-transform: uppercase;
-      }
       p {
          &:not(:last-child) {
             @include adaptiveValue('margin-bottom', 40, 20);
@@ -63,11 +30,17 @@
       }
    }
 }
+
+//====================================================================================================
 .gull-social {
    position: relative;
    overflow: hidden;
    @media (min-width: $pc) {
       background: url(@img/social/gull/image.jpg) center right / contain no-repeat;
+      transition: all 0.8s ease;
+   }
+   &:hover {
+      background-position: 105% center;
    }
    &::before {
       content: '';
@@ -113,7 +86,7 @@
       line-height: math.div(17, 14);
       text-align: justify;
       color: #ffffff;
-      @media (min-width: $mobile) {
+      @media (min-width: $mobileSmall) {
          text-transform: uppercase;
       }
       p {
@@ -134,9 +107,11 @@
       }
    }
 }
+
+//====================================================================================================
 .item-social {
    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.15);
-   transition: all 0.6s ease;
+   transition: all 0.45s ease;
    padding: rem(27) 0;
    @include adaptiveValue('padding-left', 40, 15);
    @include adaptiveValue('padding-right', 40, 15);
@@ -164,6 +139,11 @@
       background-color: $mainColor;
       display: inline-block;
       padding: rem(4) rem(10);
+      transition: all 0.45s ease;
+      .item-social:hover & {
+         transform: translateX(2%);
+         box-shadow: 4px 4px 3px 2px rgb(41, 80, 101);
+      }
       @media (min-width: $pc) {
          padding: rem(4) rem(40);
       }
@@ -185,9 +165,6 @@
             margin-bottom: em(15, 14);
          }
       }
-   }
-
-   &__image {
    }
 
    &__image-ibg {

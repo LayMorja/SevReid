@@ -5,19 +5,11 @@
 
    &__title {
       color: $mainDarkColor;
-      &:not(:last-child) {
-         margin-bottom: em(26, 48);
-      }
    }
 
    &__description {
-      @include adaptiveValue('font-size', 18, 16);
-      line-height: math.div(22, 18);
       &:not(:last-child) {
          margin-bottom: em(42);
-      }
-      @media (min-width: $mobile) {
-         text-transform: uppercase;
       }
    }
 
@@ -64,7 +56,6 @@
    }
 
    &__text {
-      @include adaptiveValue('font-size', 18, 16);
       font-weight: 400;
       @include adaptiveValue('padding-left', 20, 0);
       &:not(:last-child) {

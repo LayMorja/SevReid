@@ -142,16 +142,8 @@ body {
 @import 'contucts';
 @import 'social';
 @import 'management';
-@import 'products';
-@import 'installation';
-@import 'metal';
-@import 'cable';
-@import 'lamps';
 
 .page {
-   &_home {
-   }
-
    &_inner {
       padding-top: rem(200);
       @media (max-width: $tablet) {
@@ -163,38 +155,5 @@ body {
       @media (max-width: $tablet) {
          padding-top: rem(90);
       }
-   }
-
-   &__slider-types {
-   }
-
-   &__about {
-   }
-
-   &__news {
-   }
-
-   &__idea {
-   }
-
-   &__vacancies {
-   }
-
-   &__documents {
-   }
-
-   &__contucts {
-   }
-
-   &__social {
-   }
-
-   &__management {
-   }
-
-   &__products {
-   }
-
-   &__installation {
    }
 }

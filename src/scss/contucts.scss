@@ -1,22 +1,5 @@
 .contucts {
-   &__container {
-   }
-
-   &__title {
-      &:not(:last-child) {
-         margin-bottom: rem(25);
-      }
-   }
-
-   &__label {
-   }
-
    &__adress {
-      @include adaptiveValue('font-size', 18, 16);
-      line-height: 125.4%;
-      @media (min-width: $mobile) {
-         text-transform: uppercase;
-      }
       a {
          &:hover {
             text-decoration: underline;
@@ -28,14 +11,6 @@
          }
       }
    }
-
-   &__column {
-      @include adaptiveValue('padding-top', 70, 30);
-      @include adaptiveValue('padding-bottom', 60, 30);
-   }
-
-   &__item {
-   }
 }
 
 //====================================================================================================
@@ -45,10 +20,11 @@
       flex-direction: column;
    }
    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.15);
-   transition: box-shadow 0.6s ease;
-   border: rem(1) solid $mainDarkColor;
+   transition: all 0.45s ease;
+   border: rem(1) solid rgba(41, 80, 101, 0.52);
    &:hover {
       box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.25);
+      border-color: $mainDarkColor;
    }
    &__position {
       display: flex;
@@ -64,16 +40,17 @@
       line-height: math.div(30, 20);
       text-transform: uppercase;
       color: #ffffff;
-      background: linear-gradient(0deg, #295065, #295065);
+      background-color: rgba(41, 80, 101, 0.52);
+      transition: background 0.45s ease;
+      .item-contucts:hover & {
+         background-color: #295065;
+      }
       @include adaptiveValue('padding-left', 34, 20);
       &::before {
          content: '';
          width: rem(3);
          height: rem(22.5);
          background-color: #fff;
-      }
-      &_lightcolor {
-         background: linear-gradient(0deg, rgba(41, 80, 101, 0.52), rgba(41, 80, 101, 0.52));
       }
    }
 

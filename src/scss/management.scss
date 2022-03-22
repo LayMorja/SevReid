@@ -1,25 +1,13 @@
 //====================================================================================================
 .management {
-   &__title {
-      &:not(:last-child) {
-         margin-bottom: rem(25);
-      }
-   }
-
    &__text {
-      @include adaptiveValue('font-size', 18, 16);
-      line-height: 125.4%;
-      @media (min-width: $mobile) {
-         text-transform: uppercase;
-      }
       &:not(:last-child) {
          margin-bottom: rem(30);
       }
    }
-
-   &__table {
-   }
 }
+
+//====================================================================================================
 .table-management {
    display: grid;
    grid-template-columns: repeat(2, 1fr);
@@ -54,7 +42,7 @@
       text-align: center;
       color: $mainDarkColor;
       padding: rem(16);
-      @media (min-width: $mobile) {
+      @media (min-width: $mobileSmall) {
          text-transform: uppercase;
       }
       &_light {

@@ -4,10 +4,6 @@
    }
 
    &__title {
-      color: $mainDarkColor;
-      &:not(:last-child) {
-         margin-bottom: em(33, 48);
-      }
    }
 
    &__form {
@@ -107,9 +103,6 @@
 
    &__text {
       flex: 1 1 auto;
-      @media (min-width: $mobile) {
-         text-transform: uppercase;
-      }
    }
 
    &__icon {
