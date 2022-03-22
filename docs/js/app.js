@@ -4129,7 +4129,7 @@
         });
     }
     function initSliders() {
-        if (document.querySelector(".swiper")) new core(".swiper", {
+        if (document.querySelector(".slider-types__slider")) new core(".slider-types__slider", {
             modules: [ Pagination, Autoplay, EffectFade ],
             observer: true,
             observeParents: true,
@@ -4148,6 +4148,21 @@
             pagination: {
                 el: ".swiper-pagination",
                 clickable: true
+            },
+            on: {}
+        });
+        if (document.querySelector(".production__slider")) new core(".production__slider", {
+            modules: [],
+            observer: true,
+            observeParents: true,
+            slidesPerView: 1,
+            spaceBetween: 0,
+            speed: 800,
+            loop: true,
+            breakpoints: {
+                992: {
+                    slidesPerView: 2
+                }
             },
             on: {}
         });

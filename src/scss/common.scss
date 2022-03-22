@@ -27,3 +27,41 @@
       margin-bottom: em(10, 18);
    }
 }
+
+.production {
+   &__slider {
+      position: relative;
+      @include adaptiveValue('margin-top', 30, 15);
+      @include adaptiveValue('margin-bottom', 30, 15);
+      &::before,
+      &::after {
+         content: '';
+         position: absolute;
+         height: rem(45);
+         width: 100%;
+         z-index: 3;
+      }
+      &::before {
+         top: 0;
+         left: 0;
+         background: linear-gradient(180deg, #ffffff 0%, #ffffff 61.19%, rgba(255, 255, 255, 0) 166.4%);
+      }
+      &::after {
+         bottom: 0;
+         left: 0;
+         background: linear-gradient(360deg, #ffffff 0%, #ffffff 61.19%, rgba(255, 255, 255, 0) 166.4%);
+      }
+   }
+
+   &__wrapper {
+      @include adaptiveValue('max-height', 550, 350);
+   }
+
+   &__slide {
+      img {
+         width: 100%;
+         object-fit: cover;
+         object-position: top center;
+      }
+   }
+}

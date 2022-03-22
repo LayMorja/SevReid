@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+	@@include('html/_head.htm',{
+	"title":"МеталлоФОТО | Северный Рейд"
+	})
+	<body>
+		<div class="wrapper">
+			@@include('html/_header.htm',{
+            "mod":"inner"
+         })
+			<main class="page page_inner">
+            <section class="page__metal metal">
+               <div class="metal__container">
+                  <h1 class="metal__title title title_blue">МеталлоФОТО</h1>
+                  <div class="metal__text">
+                     <p>
+                        Технология Металлофото® уникальная технология, которая широко используется во всем мире более 50 лет. Это простой доступный процесс получения фотографических черно-белых изображений с элементами цвета на металле. 
+                     </p>
+                  </div>                  
+               </div>
+               <div class="production__slider swiper">
+                  <div class="production__wrapper swiper-wrapper">
+                     <div class="production__slide swiper-slide">
+                        <img src="@img/products/slider/01.jpg" alt="Image">
+                     </div>
+                     <div class="production__slide swiper-slide">
+                        <img src="@img/products/slider/02.jpg" alt="Image">
+                     </div>
+                  </div>
+               </div>
+               <div class="metal__container">
+                  <ul class="metal__list">
+                     <li class="metal__item">
+                        Изображение печатается на алюминиевой пластине серебристого цвета толщиной 0,5 мм. В поры алюминия внедрены фоточувствительные соли серебра.
+                     </li>
+                     <li class="metal__item">
+                        После печати пластина с изображением обрабатывается в специальном, содержащем никель растворе, при температуре 100°С.
+                     </li>
+                     <li class="metal__item">
+                        В процессе обработки поры алюминия закрываются и изображение составляет с металлом единое целое.
+                     </li>
+                     <li class="metal__item">
+                        Изделия МЕТАЛЛОФОТО имеют исключительную долговечность и сохраняют свой прекрасный первоначальный вид на протяжении долгих лет, несмотря на воздействие агрессивных сред: прямой солнечный свет, неблагоприятные погодные условия, воздействие высоких и низких температур (-50оС до +100оС)
+                     </li>
+                     <li class="metal__item">
+                        Гарантия на стойкость изображения не менее 25 лет.
+                     </li>
+                     <li class="metal__item">
+                        Для крепления пластины на гладкую поверхность используется клеевой слой, который сохраняет свои свойства в диапазоне от -40оС до +100оС.
+                     </li>
+                  </ul>
+               </div>
+            </section>
+			</main>
+			@@include('html/_footer.htm',{})
+		</div>
+		@@include('html/_popup.htm',{})
+		@@include('html/_js.htm',{})
+	</body>
+</html>
