@@ -43,7 +43,18 @@
 </body>
 <style>
 	@charset "UTF-8";
-	@import url("https://fonts.googleapis.com/css?family=Montserrat:regular,700&display=swap");
+
+	@font-face {
+		font-family: "Cera Pro";
+		src: url("fonts/CeraPro-Regular.woff") format("woff");
+		font-weight: 400;
+	}
+
+	@font-face {
+		font-family: "Cera Pro";
+		src: url("fonts/CeraPro-Bold.woff") format("woff");
+		font-weight: 700;
+	}
 
 	*,
 	*::before,
@@ -62,11 +73,11 @@
 		min-width: 320px;
 		width: 100%;
 		color: #fff;
-		background-color: #5e5373;
+		background-color: #32373e;
 	}
 
 	body {
-		font-family: Montserrat;
+		font-family: "Cera Pro", sans-serif;
 		font-size: 100%;
 		line-height: 1;
 		font-size: 1rem;
@@ -74,12 +85,12 @@
 
 	a {
 		text-decoration: underline;
-		color: #ebe691
+		color: #f3b35c;
 	}
 
 	a:visited {
 		text-decoration: underline;
-		color: #aaa768;
+		color: #a57a3e;
 	}
 
 	a:hover {
@@ -107,6 +118,10 @@
 		align-items: flex-start;
 	}
 
+	.rootpage h1 {
+		text-shadow: 4px 6px 5px #883d0b;
+	}
+
 	@media (max-width: 767px) {
 		.rootpage {
 			padding: 30px 15px;
@@ -114,9 +129,20 @@
 	}
 
 	h1 {
-		color: #ebe691;
+		color: #fff;
 		font-size: 2.5rem;
 		margin: 0px 0px 1.25rem 0px;
+		font-weight: 600;
+		position: relative;
+	}
+
+	h1:before {
+		display: inline-block;
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		background: url(img/title-back.png) center / cover no-repeat;
 	}
 
 	@media (max-width: 767px) {
@@ -127,9 +153,14 @@
 	}
 
 	h2 {
-		color: #ebe691;
+		color: #fff;
 		font-size: 1.25rem;
 		margin: 0px 0px 1rem 0px;
+	}
+
+	h2:not(.ready) {
+		text-shadow: 2px 2px 3px #9f82b7;
+		margin: 0 0 0.5rem 0;
 	}
 
 	@media (max-width: 767px) {
@@ -169,16 +200,16 @@
 	}
 
 	.rootpage__contacts {
-		background: #32b5a4;
+		background: #565f6a;
 
 	}
 
 	.rootpage__contacts a {
-		color: #ebe691;
+		color: #56c3b9;
 	}
 
 	.rootpage__tnx {
-		background: #c22d63;
+		background: #565f6a;
 		margin: 0px 0px 1rem 0px;
 	}
 </style>
