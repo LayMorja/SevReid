@@ -149,7 +149,35 @@
       row-gap: rem(25);
    }
 
-   &__block {
+   &__navigation {
+      margin-top: rem(15);
+   }
+
+   &__list {
+      display: flex;
+      justify-content: center;
+      gap: rem(20);
+      flex-wrap: wrap;
+   }
+
+   &__item {
+      background-color: $mainColor;
+      min-height: 35px;
+      aspect-ratio: 1;
+      color: #fff;
+      border-radius: 50%;
+      transition: background-color 0.3s ease;
+      &:hover,
+      &:focus,
+      &.active {
+         background-color: $mainDarkColor;
+      }
+      a {
+         height: 100%;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+      }
    }
 }
 .block-news {

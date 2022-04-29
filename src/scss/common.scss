@@ -1,5 +1,3 @@
-// Заголовки, общие БЄМ блоки и проче...
-// Заголовки на странице ====================================================================================================
 .title {
    font-family: Oswald;
    @include adaptiveValue('font-size', 48, 32);
@@ -341,6 +339,333 @@
          }
          &::before {
             top: rem(0);
+         }
+      }
+   }
+}
+
+// Услуги ====================================================================================================
+.item-services {
+   display: flex;
+   background: rgba(255, 255, 255, 0.2);
+   box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.25);
+   padding: rem(20) rem(36);
+   gap: rem(60);
+   transition: all 0.3s ease;
+
+   @media (any-hover: hover) {
+      &:hover {
+         box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.25);
+      }
+   }
+
+   @media (max-width: $tablet) {
+      flex-direction: column;
+      padding: rem(15) rem(22);
+      gap: rem(30);
+   }
+   &__body {
+      display: flex;
+      flex-direction: column;
+      flex: 1 1 auto;
+      font-size: rem(14);
+      @media (max-width: $tablet) {
+         text-align: center;
+      }
+   }
+
+   &__title {
+      font-weight: 400;
+      @include adaptiveValue('font-size', 36, 18);
+      line-height: 1.47;
+      text-transform: uppercase;
+      color: #ffffff;
+      background-color: #2d7e97;
+      display: inline-block;
+      width: 100%;
+      padding-inline: rem(8);
+      &:not(:last-child) {
+         margin-bottom: em(34, 36);
+      }
+      font-weight: 500;
+      @media (min-width: $mobile) {
+         padding-left: rem(40);
+         font-weight: 400;
+      }
+   }
+
+   &__text {
+      flex: 1 1 auto;
+      @media (min-width: $tablet) {
+         padding-left: rem(40);
+      }
+      @media (min-width: $mobile) {
+         text-transform: uppercase;
+      }
+      p {
+         &:not(:last-child) {
+            margin-bottom: em(25, 14);
+         }
+      }
+      &:not(:last-child) {
+         margin-bottom: em(25, 14);
+      }
+   }
+   &__footer {
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      @media (min-width: $mobile) {
+         text-transform: uppercase;
+      }
+      @media (max-width: $mobile) {
+         flex-direction: column;
+         gap: rem(20);
+      }
+   }
+
+   &__form {
+      display: flex;
+      align-items: center;
+      position: relative;
+      &::before {
+         margin-right: rem(20);
+         color: #fff;
+      }
+      &::after {
+         content: '';
+         width: rem(24);
+         flex: 0 0 rem(24);
+         border-radius: 50%;
+         aspect-ratio: 1;
+         background-color: $mainColor;
+         position: absolute;
+         left: rem(-7);
+         top: 50%;
+         transform: translateY(-50%);
+         z-index: -1;
+      }
+      @media (min-width: $mobile) {
+         &:not(:last-child) {
+            padding-right: rem(20);
+            border-right: 2px solid $mainColor;
+         }
+      }
+   }
+
+   &__phone {
+      @media (any-hover: hover) {
+         a {
+            &:hover {
+               text-decoration: underline;
+            }
+         }
+      }
+      @media (min-width: $mobile) {
+         &:not(:first-child) {
+            padding-left: rem(20);
+         }
+      }
+   }
+
+   &__image {
+      position: relative;
+      text-align: center;
+      @media (min-width: $tablet) {
+         flex: 0 1 rem(325);
+      }
+      img {
+         @media (max-width: $mobile) {
+            max-width: 100%;
+            object-fit: cover;
+         }
+      }
+   }
+   &__image-text {
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 16px;
+      text-transform: uppercase;
+      color: $mainDarkColor;
+      padding: rem(3) rem(36);
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      border-radius: rem(50);
+      position: absolute;
+      bottom: rem(-8);
+      left: rem(-6);
+      background: #ffffff;
+      transition: all 0.3s ease;
+      @media (any-hover: hover) {
+         &:hover {
+            background-color: $mainDarkColor;
+            color: #fff;
+         }
+      }
+      &:focus {
+         background-color: $mainDarkColor;
+         color: #fff;
+      }
+      @media (max-width: $tablet) {
+         left: 50%;
+         transform: translateX(-50%);
+      }
+   }
+}
+
+// Пресс-центр ====================================================================================================
+.pressa__photoes {
+   background: rgba(255, 255, 255, 0.2);
+   box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.25);
+   padding: rem(9) rem(36) rem(18) 0;
+}
+.news {
+   &__inner-title {
+      font-family: 'Oswald';
+      font-style: normal;
+      font-weight: 400;
+      @include adaptiveValue('font-size', 36, 24);
+      line-height: 53px;
+      text-transform: uppercase;
+      position: relative;
+      z-index: 3;
+      left: rem(-5);
+      max-width: rem(400);
+      color: #fff;
+      padding-left: rem(45);
+      &:not(:last-child) {
+         margin-bottom: rem(5);
+      }
+      position: relative;
+      &::before {
+         content: '';
+         position: absolute;
+         top: 0;
+         left: -5px;
+         width: 100%;
+         height: 100%;
+         background-color: $mainDarkColor;
+         z-index: -1;
+      }
+   }
+
+   &__inner-link {
+      display: block;
+      padding-left: rem(45);
+      font-size: 14px;
+      @media (min-width: $mobile) {
+         text-transform: uppercase;
+      }
+      &:not(:last-child) {
+         margin-bottom: rem(18);
+      }
+      @media (any-hover: hover) {
+         &:hover {
+            text-decoration: underline;
+         }
+      }
+   }
+}
+.photoes {
+   &__slider {
+      margin-left: rem(45) !important;
+      @media (max-width: rem(560)) {
+         text-align: center;
+      }
+   }
+
+   &__slide {
+      position: relative;
+      cursor: pointer;
+      @media (any-hover: hover) {
+         &:hover {
+            a::before {
+               transform: translate(0);
+            }
+            .photoes__name {
+               visibility: visible;
+               opacity: 1;
+            }
+         }
+      }
+      a {
+         position: relative;
+         display: inline-block;
+         &::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            transition: transform 0.5s ease;
+            background-color: rgba($mainDarkColor, 0.8);
+            @media (any-hover: hover) {
+               & {
+                  transform: translateY(100%);
+               }
+            }
+         }
+      }
+      img {
+         max-width: 100%;
+      }
+   }
+
+   &__name {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-transform: uppercase;
+      font-size: rem(20);
+      text-align: center;
+      color: #fff;
+      transition: opacity 0.5s ease 120ms;
+      @media (any-hover: hover) {
+         & {
+            visibility: hidden;
+            opacity: 0;
+         }
+      }
+   }
+
+   &__images {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(rem(290), 1fr));
+      column-gap: rem(16);
+      row-gap: rem(28);
+      img {
+         max-width: 100%;
+      }
+      padding-inline: rem(40);
+      margin-top: rem(30);
+      @include adaptiveValue('margin-bottom', 90, 40);
+   }
+}
+
+// Отдельная новость ====================================================================================================
+.new {
+   &__body {
+      display: grid;
+      gap: rem(40);
+      @include adaptiveValue('margin-bottom', 100, 40);
+      align-items: center;
+      @media (min-width: $tablet) {
+         grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      }
+   }
+
+   &__image {
+      img {
+         max-width: 100%;
+      }
+   }
+
+   &__text {
+      font-weight: 400;
+      p {
+         &:not(:last-child) {
+            margin-bottom: em(25, 18);
          }
       }
    }

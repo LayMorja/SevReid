@@ -161,6 +161,66 @@ function initSliders() {
 			}
 		});
 	}
+   if (document.querySelector('.pressa')) { // Указываем скласс нужного слайдера
+		// Создаем слайдер
+		new Swiper('.photoes__slider', { // Указываем скласс нужного слайдера
+			// Подключаем модули слайдера
+			// для конкретного случая
+			modules: [],
+			observer: true,
+			observeParents: true,
+			slidesPerView: 5,
+			spaceBetween: 16,
+			// autoHeight: true,
+			speed: 800,
+
+			//touchRatio: 0,
+			//simulateTouch: false,
+			loop: true,
+			//preloadImages: false,
+			//lazy: true,
+			
+
+			// Скроллбар
+			/*
+			scrollbar: {
+				el: '.swiper-scrollbar',
+				draggable: true,
+			},
+			*/
+
+			// Кнопки "влево/вправо"
+         /*
+			navigation: {
+				prevEl: '.swiper-button-prev',
+				nextEl: '.swiper-button-next',
+			},
+         */
+
+			// Брейкпоинты
+			breakpoints: {
+				320: {
+					slidesPerView: 1,
+				},
+            560: {
+					slidesPerView: 2,
+            },
+				768: {
+					slidesPerView: 3,
+				},
+				992: {
+					slidesPerView: 4,
+				},
+				1268: {
+					slidesPerView: 5,
+				},
+			},
+			// События
+			on: {
+
+			}
+		});
+	}
 }
 // Скролл на базе слайдера (по классу swiper_scroll для оболочки слайдера)
 /*

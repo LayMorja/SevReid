@@ -31,13 +31,13 @@ export const path = {
 	buildFolder: buildFolder,
 	rootFolder: rootFolder,
 	srcFolder: srcFolder,
-	ftp: `` // Путь к нужной папке на удаленном сервере. gulp добавит имя папки проекта автоматически
+	ftp: `/www/laymorja.site` // Путь к нужной папке на удаленном сервере. gulp добавит имя папки проекта автоматически
 };
 
 // Настройка FTP соединения
 export const configFTP = {
-	host: "", // Адрес FTP сервера
-	user: "", // Имя пользователя
-	password: "", // Пароль
+	host: "37.140.192.135", // Адрес FTP сервера
+	user: "u1665794", // Имя пользователя
+	password: "rpCkZk5yZ257XYrx", // Пароль
 	parallel: 5 // Кол-во одновременных потоков
 }
